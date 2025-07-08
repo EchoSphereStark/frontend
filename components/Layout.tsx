@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import TopBar from './TopBar'
 
 
 type LayoutProps = {
@@ -12,6 +13,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className="flex ">
         <Sidebar />
         <section className="">
+          <TopBar/>
           {children}
         </section>
       </div>
