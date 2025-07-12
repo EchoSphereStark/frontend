@@ -11,8 +11,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex ">
+        <div className="hidden lg:block">
+
         <Sidebar />
-        <section className="">
+        </div>
+        <section className="w-[100%]">
           <TopBar/>
           {children}
         </section>
