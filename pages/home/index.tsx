@@ -4,8 +4,8 @@ import HomeFeature from '@/features/HomeFeature/index';
 
 export default function index() {
   return (
- <Layout>
-   <HomeFeature />
+    <Layout>
+      <HomeFeature />
     </Layout>
   )
 }
