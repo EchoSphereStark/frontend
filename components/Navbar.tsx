@@ -3,10 +3,18 @@ import Image from 'next/image'
 
 import { LuUser } from "react-icons/lu";
 import { IoMenuSharp } from "react-icons/io5";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useCatridgeAuth } from '@/hooks/useCatridgeAuth';
 
 export default function Navbar() {
     const [openNav, setOpenNav] = useState<boolean>(false);
+    const {connect, controller, address, setUsername} = useCatridgeAuth()
+
+      useEffect(() => {
+    if (!address) return
+    controller.username()?.then((n) => setUsername(n))
+  }, [address, controller])
+
     return (
         <main className='w-full'>
             <section className="w-[90%] mx-auto flex justify-between items-center mt-[8px]">
@@ -28,8 +36,8 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="hidden md:block">
-                    <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px]'>
-                        <p className="text-[16px] font-semibold ">Register</p>
+                    <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px] cursor-pointer' onClick={()=>connect({ connector: controller })}>
+                        <p className="text-[16px] font-semibold ">Register / Login</p>
                         <LuUser className='text-[24px]' />
                     </button>
                 </div>
@@ -53,8 +61,8 @@ export default function Navbar() {
                             <li className="cursor-pointer">About</li>
                         </ul>
 
-                        <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px]'>
-                            <p className="text-[16px] font-semibold ">Register</p>
+                        <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px] cursor-pointer' onClick={()=>connect({ connector: controller })}>
+                            <p className="text-[16px] font-semibold " >Register2</p>
                             <LuUser className='text-[24px]' />
                         </button>
 
