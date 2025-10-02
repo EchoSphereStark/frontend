@@ -10,9 +10,12 @@ export default function Navbar() {
     const [openNav, setOpenNav] = useState<boolean>(false);
     const {connect, controller, address, setUsername} = useCatridgeAuth()
 
+
       useEffect(() => {
     if (!address) return
     controller.username()?.then((n) => setUsername(n))
+    console.log(address)
+    
   }, [address, controller])
 
     return (
@@ -36,7 +39,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="hidden md:block">
-                    <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px] cursor-pointer' onClick={()=>connect({ connector: controller })}>
+                    <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px] cursor-pointer' onClick={()=>{connect({ connector: controller }); console.log("clicked")}}>
                         <p className="text-[16px] font-semibold ">Register / Login</p>
                         <LuUser className='text-[24px]' />
                     </button>
@@ -61,7 +64,7 @@ export default function Navbar() {
                             <li className="cursor-pointer">About</li>
                         </ul>
 
-                        <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px] cursor-pointer' onClick={()=>connect({ connector: controller })}>
+                        <button className='bg-[#C51C71] border-[#26011B] border-[1px] flex items-center gap-4 py-[16px] px-[36px] text-white rounded-[96px] cursor-pointer' onClick={()=>{connect({ connector: controller })}}>
                             <p className="text-[16px] font-semibold " >Register2</p>
                             <LuUser className='text-[24px]' />
                         </button>

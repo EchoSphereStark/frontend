@@ -54,7 +54,7 @@ export function StarknetProvider({ children }: { children: React.ReactNode }) {
   return (
     <StarknetConfig
       autoConnect
-      defaultChainId={mainnet.id}
+      defaultChainId={sepolia.id}
       chains={[mainnet, sepolia]}
       provider={provider}
       connectors={[connector]}
