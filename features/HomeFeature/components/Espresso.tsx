@@ -35,7 +35,6 @@ export default function PodcastCard({textStyle, borderColor}:{textStyle:string, 
         </div>
         
       </div>
-    
      
     </div>
   )

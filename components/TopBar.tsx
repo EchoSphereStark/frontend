@@ -3,8 +3,12 @@ import { IoSearchOutline } from "react-icons/io5";
 import { GoPlusCircle } from "react-icons/go";
 import Image from 'next/image';
 import { IoMdMenu } from "react-icons/io";
+import { usePathname } from 'next/navigation'
 
 export default function TopBar() {
+   
+    const pathname = usePathname();
+    console.log(pathname)
     return (
         <main>
             <section className='w-[96%] mx-auto'>
@@ -14,7 +18,7 @@ export default function TopBar() {
                 </div>
 
 
-                    <div className="hidden md:flex items-center w-[60%] h-[48px] border-[2px] rounded-full border-[#EEEEEE] hover:border-[black]">
+                    {pathname !== "/podcasts" ? <div className={`hidden md:flex items-center w-[60%] h-[48px] border-[2px] rounded-full border-[#EEEEEE] hover:border-[black] `}>
                         <input
                             type="text"
                             placeholder="What do you want to listen to?"
@@ -26,8 +30,10 @@ export default function TopBar() {
                         </div>
 
                     </div>
+                    : <div className=""></div>
+                    }
 
-                    <div className="hidden md:flex items-center gap-4 ">
+                    <div className={`hidden md:flex items-center gap-4 ${pathname === "/podcasts" && "justify-end"}`}>
 
                         <div className="flex items-center gap-4 h-[48px] border-[1px] px-4 rounded-full">
                             <p className="text-[16px]">Upload New Podcast</p>
