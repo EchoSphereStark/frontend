@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import { TfiHome } from "react-icons/tfi";
@@ -95,8 +96,57 @@ export default function Sidebar() {
                 </div>
             </div>
 
+                    <div className="mt-2 hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex items-center w-[90%] mx-auto gap-2 text-[#666666]">
+                            <FaPodcast size={16} />
+                            <p className="text-[14px] font-medium">Your Podcast</p>
+                        </div>
+                    </div>
+                    <div className=" hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex items-center w-[90%] mx-auto gap-2 text-[#666666]">
+                            <GoHistory size={16} />
+                            <p className="text-[14px] font-medium">History</p>
+                        </div>
+                    </div>
+                    <div className=" hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex items-center w-[90%] mx-auto gap-2 text-[#666666]">
+                            <MdVideoLibrary size={16} />
+                            <p className="text-[14px] font-medium">Library</p>
+                        </div>
+                    </div>
+                    <div className=" hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex items-center w-[90%] mx-auto gap-2 text-[#666666]">
+                            <AiOutlineLike size={16} />
+                            <p className="text-[14px] font-medium">Liked podcasts</p>
+                        </div>
+                    </div>
+
+                </section>
+                <section className=" border-[#d4cbb9] pb-4">
+                    <div className="mt-4 w-[90%] mx-auto">
+                        <p className="text-[12px] font-medium text-[#666666]">System</p>
+                    </div>
+                    <div className="mt-2 hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex w-[90%] items-center mx-auto gap-2 text-[#666666]">
+                            <GrAnalytics size={16} />
+                            <p className="text-[14px] font-medium">Analytics</p>
+                        </div>
+                    </div>
+                    <div className=" hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex w-[90%] items-center mx-auto gap-2 text-[#666666]">
+                            <GiSettingsKnobs size={16} />
+                            <p className="text-[14px] font-medium">Preferences</p>
+                        </div>
+                    </div>
+                    <div className=" hover:bg-[#FFDCEE] p-2 hover:rounded-lg cursor-pointer">
+                        <div className="flex w-[90%] items-center mx-auto gap-2 text-[#666666]">
+                            <IoSettingsOutline size={16} />
+                            <p className="text-[14px] font-medium">Settings</p>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
         </section>
-        </section>
-    </section>
-  )
+    )
 }
